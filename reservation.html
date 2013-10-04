@@ -1,0 +1,30 @@
+<div id="reservation" class="row">
+  <div class="large-6 large-offset-3">
+    <h5>Welcome to {{ title }}</h5>
+
+    <div class="alert-box"></div>
+   <div ng-controller="BikeShareCtrl">
+
+      <span ng-repeat="res in reservations">
+        <p>{{ res.message }}{{res.user_id}}  {{res.location_id}} {{res.start_date}} {{res.end_date}}</p>
+      </span>
+      <form ng-submit="makeRes()">
+        <label>Name: </label><input type="text" ng-model="user_id"  size="30"
+                     placeholder="enter user name">              
+        <label>Start Date: </label><input type="date" ng-model="start_date">
+        <label>End Date: </label><input type="date" ng-model="end_date">
+        <label>Location: </label><select ng-model="location_id" ng-options="each.location_id as each.location_name for each in locations">
+                                  <option value=''>Select pick-up location</option>
+                                 </select>
+                                 <input class="button small radius small-offset-5" type="submit" value="reserve">
+      </form>
+    </div>
+
+    <div class="row">
+      <div class="small-3 small-offset-5">
+        <button class="button small radius" ng-click="logout()">Log Out</button>
+      </div>
+    </div>
+    <div class="alert-box"></div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+
+<div id="login" class="row">  
+  <div class="large-6 large-offset-3">
+    <h5>Welcome to {{ title }}</h5>
+
+    <div class="alert-box">{{ message }}</div>
+    <div class="small-4 large-offset-3">
+      <form ng-submit="login()">
+        <fieldset class="radius">
+          <div class="row">
+            
+              <input type="text" name="username" placeholder="username" ng-model="credentials.username" required/>
+
+              <input type="password" name="password" placeholder="password" ng-model="credentials.password" required/>
+
+              <button type="submit" class="button small radius expand">Log In</button>
+            
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+  <div class="large-6 large-offset-3">
+    <image-grid images=images></image-grid>
+    <div class="alert-box">{{ message }}</div>
+  </div>
+  </div>
